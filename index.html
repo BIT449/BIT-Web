@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BIT: Braille con Tecnologia para personas Invidentes</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Playfair+Display&display=swap" rel="stylesheet">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+ body {
+      padding-top: 100px; /* para que el contenido no quede debajo del navbar */
+      margin: 15px;
+      background: #F5F2E7;
+    }
+    .navbar-custom {
+      background-color:#4A7900;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 28px;
+    }
+
+    .btn-outline-custom {
+      color: #ffffff;
+      border: 1px solid #ffffff00;
+    }
+
+    .btn-outline-custom:hover,
+    .btn-outline-custom:focus {
+      background-color: #A4C400;
+      color: #fff;
+    }
+
+    .scroll-adjust {
+  scroll-margin-top: 100px; /* espacio que deja al hacer scroll */
+}
+
+
+ .banner {
+      background-color: #FAFAF5; /* Verde menta */
+      color: #000000;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 30px;
+      font-family: 'Arial', sans-serif;
+      font-weight: bold;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin: 30px;
+    }
+ 
+.video-responsive {
+  width: 560px;
+  height: 315px;
+  margin: auto;
+}
+
+.video-responsive iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+/* Media query para pantallas pequeñas (celulares) */
+@media screen and (max-width: 600px) {
+  .video-responsive {
+    width: 50%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Mantiene proporción de video */
+  }
+
+  .video-responsive iframe {
+    height: auto;
+  }
+}
+
+.Titulos {
+   font-size: #2E6B45 ;
+
+}
+
+.p {
+  text-align: center;            /* Centra horizontalmente */
+  display: flex;
+  justify-content: center;      /* Centra horizontal en flex */
+  align-items: center;          /* Centra vertical */
+  height: 150px;
+  
+}
+
+.braille {
+  background-color:#FAFAF5;
+  color: #000000;
+  padding: 40px 20px;
+  font-size: 26px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  margin: 30px;
+}
+.nosotros {
+  background-color:#FAFAF5;
+  color: #000000;
+  padding: 40px 20px;
+  font-size: 26px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  margin: 30px;
+}
+
+
+.problema {
+  background-color:#FAFAF5;
+  color:#000000;
+  padding: 40px 20px;
+  font-size: 26px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  margin: 30px;
+  
+}
+.desarrollo {
+   background-color:#FAFAF5;
+  color: #000000;
+  padding: 40px 20px;
+  font-size: 26px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  margin: 30px;
+}
+
+.contacto {
+   background-color:#FAFAF5;
+  color: #000000;
+  padding: 40px 20px;
+  font-size: 26px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  margin: 30px;
+}
+
+.pie {
+   width: 100%;
+  margin: 0;
+  padding: 30px 20px;
+  background-color: #4A7900;
+  color: white;
+  font-size: 20px;
+  
+}
+.justify {
+
+    text-align: justify;
+    
+}
+
+.tarjetas-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      background-color: #F5F5F5;
+      padding: 20px;
+    }
+
+    .tarjeta {
+      background-color: white;
+      border: 1px solid rgb(0, 0, 0);
+      border-radius: 12px;
+      width: 180px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .tarjeta:hover {
+      transform: scale(1.05);
+    }
+
+    .tarjeta img {
+      width: 100%;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+
+    .tarjeta p {
+      padding: 10px;
+      font-size: 14px;
+      color: #2E2E2E;
+    }
+
+</style>
+</head>
+<body> 
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+  <div class="container-fluid">
+   <img src="https://i.postimg.cc/76fVgDmL/icono.jpg" alt="Logo" style="width: 70px;"></a> <a style="font-size: 23px;" 
+   class="navbar-brand text-white" href="#">BIT: Braille para Invidentes con Tecnología</a>
+    
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+      
+         <button class="btn btn-outline-custom btn-sm"  onclick="location.href='#inicio'" >Inicio</button>
+         <button class="btn btn-outline-custom btn-sm"  onclick="location.href='#sobrenosotros'">Sobre Nosotros</button>
+         <button class="btn btn-outline-custom btn-sm"  onclick="location.href='#servicios'">¿Qué estamos desarrollando?</button>
+         <button class="btn btn-outline-custom btn-sm"  onclick="location.href='#contacto'">Contacto</button>
+         <button class="btn btn-outline-custom btn-sm"  onclick="window.location.href='login.html'" >ADQUIRIR</button>
+      </ul>
+    </div>
+  </div>
+</nav>
+         
+
+<header>
+  <div class="banner">
+   "Nuestra solución no es futurista, es necesaria: herramientas 
+   prácticas para que las personas invidentes usen la tecnología a su favor."
+  </div>
+</header>
+
+
+
+
+<header class="content header">
+<h2  class="scroll-adjust" style="display: flex; justify-content: center; align-items: center; 
+height: 50px; color: #2E6B45"  id="inicio" style="font-family: 'Pacifico'" >INICIO</h2>
+</header>
+
+<div class="braille"  style="border-radius: 30px">
+<h3 class="title" class="fuente">¿Qué es el Lenguaje Braille?</h3>
+
+<p class="justify" style="font-family:' Atkinson Hyperlegible'">El Braille es un sistema táctil de escritura que tiene puntos en relieve los cuales se combinan en celdas de seis
+puntos que permiten a las personas no videntes o con problemas de visión leer y escribir de forma propia.
+  </p>
+<p class="justify"  style="font-family: ' Atkinson Hyperlegible'">A continuación puedes observar un video en donde se detalla de mejor manera qué es el Lenguaje Braille.</p>
+
+<div class="video-responsive">
+  <iframe 
+    src="https://www.youtube.com/embed/RrVSMBu1fws" 
+    title="Yodel Video"
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
+
+
+
+</div>
+
+
+
+<header class="content header">
+<h2  class="scroll-adjust" style="display: flex; justify-content: center; align-items: center; height: 50px;color: #044d40" id="sobrenosotros">SOBRE NOSOTROS</h2>
+</header>
+
+
+<div class="nosotros" style="border-radius: 30px"><h3>¿Quienes somos?</h3>
+    
+    <p class="justify" style="font-family: ' Atkinson Hyperlegible'">La empresa BIT esta conformada por 5 bachilleres de la Tecnica "Programación de Software". El proyecto es elaborado porque es un
+     requisito que tiene la técnica de la Institución Educativa Magdalena para recibir el certificado de técnico de Sistemas. 
+     poco tiempo.</p>
+     <p class="justify" style="font-family: ' Atkinson Hyperlegible'"> Quisimos entrar en el desarrollos de tecnologías para las personas invidentes, ya que tecnologías tanto de 
+      hardware como de software, presentan errores o son muy limitadas en la producción de texto.
+    </p>
+     
+    <p class="justify" style="font-family: ' Atkinson Hyperlegible'"> A continuación, observaras quienes son los integrantes detras de esta empresa y en lo que se especializan:
+
+      </p>
+    
+
+      <div  style=" background:#F5F2E7;border-radius:30px" class="tarjetas-container">
+    <div  class="tarjeta">
+      <img src="img/sierra.png" alt="Imagen 1">
+      <p>Aura Fernanda Sierra Gomez</p>
+       <p>Se especializa en la investigación de información y debate de ideas</p>
+    </div>
+    <div class="tarjeta">
+      <img src="https://i.postimg.cc/DZZGtgXp/ochoa.jpg" alt="Imagen 2">
+      <p>Juliet Johana Ochoa Londoño</p>
+       <p>Se especializa en el diseño de graficos e ideas</p>
+    </div>
+    <div class="tarjeta">
+      <img src="https://i.postimg.cc/Hxs0Tmf2/bello.jpg" alt="Imagen 3">
+      <p>Juan David Bello Riaño</p>
+         <p>Se especializa en la programación de software</p>
+    </div>
+    <div class="tarjeta">
+      <img src="img/cadena.jpeg" alt="Imagen 4">
+      <p>David Alejandro Medina Lancheros</p>
+         <p>Se especializa en.... no se profe :D</p>
+    </div>
+    <div class="tarjeta">
+      <img src="https://i.postimg.cc/j2DzJXqn/cadena2.jpg" alt="Imagen 5">
+      <p>Juan De Jesús Cadena Puerta</p>
+         <p>Se especializa en la programación de software</p>
+    </div>
+  </div>
+      
+      
+
+     <h3>¿En que problema nos enfocamos?</h3>
+    
+    <p class="justify" style="font-family: ' Atkinson Hyperlegible'">El problema en el que nos centramos es en la dificultad que presentan las personas 
+        invidentes en la producción de texto digital y al usar un teclado estándar, el cual es causado por: 
+        Un diseño no inclusivo del teclado estándar., Falta de retroalimentación visual y Falta de capacitación digital.
+         Las consecuencias a las que puede llevar son: Limitaciones en el ámbito laboral, Baja autoestima y
+         frustración emocional y un mayor riesgo de cometer errores importantes al escribir en digital.
+     
+      </p>
+
+      </div>
+ 
+<header class="content header">
+<h2  class="scroll-adjust" style="display: flex; justify-content: center; align-items: center; height: 50px; color: #044d40" id="servicios">¿QUÉ ESTAMOS DESARROLLANDO?</h2>
+</header>
+
+<div class="desarrollo " style="border-radius: 30px"><h3></h3>
+    
+    <p class="justify" style="font-family: ' Atkinson Hyperlegible'">Se realiza un editor de texto y un teclado Braille que ayude en la producción de texto
+        para personas con discapacidad visual o invidentes que presentan problemas al producir texto en un editor de texto.
+    </p>
+
+      <h3>Un teclado Braille</h3>
+    <p class="justify" style="font-family: ' Atkinson Hyperlegible'">facilitar la producción de texto a las personas no videntes que quieren escribir de una forma más 
+        cómoda, aunque primero, esa población debe conocer 
+        el alfabeto Braille para que puedan saber cómo se escribe con el teclado.</p>
+     
+        <img src="img/teclado.png" width="250" height="250">
+   
+        <p class="justify" style="font-family: ' Atkinson Hyperlegible'">Este producto beneficia a las personas no videntes porque si ellas conocen el alfabeto Braille, 
+            podrán manejar completamente el teclado en poco tiempo. Mayormente, los teclados están hechos para ser usados 
+            correctamente cuando se miran, pero para una persona ciega o con discapacidad visual, esto le podría costar.
+           </p>
+
+     <h3>Un editor de texto</h3>
+    <p class="justify" style="font-family: ' Atkinson Hyperlegible'">El editor de texto ayuda a que las personas no videntes logren escribir fácilmente y eviten
+         provocar errores al escribir, además,incluye inteligencia artificial para transformar el texto a Braille visualmente y que describa lo que el usuario 
+         escribe por voz</p>
+
+        <img src="img/editor1.png" width="250" height="250">
+    <p class="justify" style="font-family: 'Poppins'">Aunque existen editores de texto como Word con funciones como lector de pantalla, estos no satisfacen totalmente
+              las necesidades de los no videntes, por lo que el editor de texto que está en desarrollo podrá cumplir las funciones que realmente se necesiten.</p>
+
+    </div>
+
+    <header class="content header">
+<h2  class="scroll-adjust" style="display: flex; justify-content: center; align-items: center; height: 50px; color: #044d40" id="contacto">CONTACTO</h2>
+</header>
+
+<div class="contacto" style="border-radius: 30px"><h3>¿Quieres saber más de nostros?</h3>
+    
+    <p class="justify" style="font-family: ' Atkinson Hyperlegible'">Si quieres conocernos más y como va nuestro proyecto, siguenos en nuestras redes sociales
+    </p>
+
+      <h3>Facebook</h3>
+    <p class="justify" style="font-family: ' Atkinson Hyperlegible'">...</p>
+     
+      
+
+     <h3>Instagram</h3>
+    <p class="justify" style="font-family: ' Atkinson Hyperlegible'">...</p>
+
+       
+    <p class="justify" style="font-family: ' Atkinson Hyperlegible'">Aunque existen editores de texto como Word con funciones como lector de pantalla, estos no satisfacen totalmente
+              las necesidades de los no videntes, por lo que el editor de texto que está en desarrollo podrá cumplir las funciones que realmente se necesiten.</p>
+
+    </div>
+
+    <footer class="pie" style="font-family:' Atkinson Hyperlegible'"id="contacto">
+    <p>&copy; 2025 BIT: Braille para invidentes con Tecnologia. Todos los derechos reservados.</p>
+    <p>Contacto: Correo: BIT449J@gmail.com</p>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+ 
+</html>
